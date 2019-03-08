@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{cards.data.card.name}}</h1>
+    <h1><u>{{cards.data.card.name}}</u></h1>
     <h4><i>{{cards.data.card.flavor}}</i></h4>
     <img v-bind:src="cards.data.card.imageUrl" width="300" alt="" class="card-image">
     <p>{{cards.data.card.text}}</p>
@@ -18,7 +18,7 @@ export default {
   },
 
   mounted () {
-    axios.get('https://api.magicthegathering.io/v1/cards/129470').then(response => (this.cards = response))
+    axios.get('https://api.magicthegathering.io/v1/cards/130552').then(response => (this.cards = response))
   }
 }
 </script>
