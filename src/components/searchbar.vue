@@ -19,6 +19,5 @@ export default {
 <style>
   .searchInput{
     width: 350px;
-    margin-bottom: 30px;
   }
 </style>

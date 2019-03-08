@@ -8,4 +8,8 @@ export default {
 </script>
 
 <style>
+  .logo{
+    margin-top: 5px;
+    margin-bottom: 0px;
+  }
 </style>

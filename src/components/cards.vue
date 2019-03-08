@@ -29,6 +29,8 @@ export default {
 
 h1 {
   font-family: 'Libre Baskerville', serif;
+  margin-left: 650px;
+  margin-right: 650px;
 }
 
 .card-image{
@@ -39,5 +41,6 @@ h1 {
 
 div{
   color: white;
+  margin-top: 20px;
 }
 </style>

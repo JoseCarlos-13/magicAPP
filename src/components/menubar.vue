@@ -1,6 +1,7 @@
 <template>
-  <el-row class="tac">
-  <el-col :span="4">
+  <div id="menuBar">
+    <el-row class="tac">
+      <el-col>
     <el-menu
       default-active="2"
       class="el-menu-vertical-demo"
@@ -40,7 +41,8 @@
       </el-menu-item>
     </el-menu>
   </el-col>
-</el-row>
+  </el-row>
+  </div>
 </template>
 
 <script>
@@ -57,4 +59,7 @@ export default {
 </script>
 
 <style>
+  #menuBar{
+    margin-right: 1550px
+  }
 </style>

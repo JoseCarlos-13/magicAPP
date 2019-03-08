@@ -1,7 +1,7 @@
 <template>
   <div>
     <logo></logo>
-    <searchbar></searchbar>
+    <searchBar></searchBar>
     <card></card>
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
   components: {
     'card': cards,
     'logo': logo,
-    'searchbar': searchBar
+    'searchBar': searchBar
   }
 }
 </script>
