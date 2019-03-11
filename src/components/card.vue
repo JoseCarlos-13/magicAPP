@@ -33,7 +33,7 @@ h2{
 
 div{
   color: white;
-  margin-top: -40px;
+  margin-top: -36px;
 
 }
 </style>
