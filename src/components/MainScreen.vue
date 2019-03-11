@@ -1,21 +1,18 @@
 <template>
   <div>
     <logo></logo>
-    <searchBar></searchBar>
-    <card></card>
+    <container></container>
   </div>
 </template>
 
 <script>
-import cards from './cards'
 import logo from './logo'
-import searchBar from './searchbar'
+import container from './container'
 
 export default {
   components: {
-    'card': cards,
     'logo': logo,
-    'searchBar': searchBar
+    'container': container
   }
 }
 </script>

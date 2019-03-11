@@ -10,6 +10,7 @@ export default {
 <style>
   .logo{
     margin-top: 5px;
-    margin-bottom: 0px;
+    margin-bottom: 30px;
+    margin-left: -1390px;
   }
 </style>
