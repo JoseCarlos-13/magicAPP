@@ -3,7 +3,7 @@
   <el-input placeholder="Write the name of a card here" v-model="search" class="searchInput">
     <el-button slot="append" icon="el-icon-search" @click="getCard(search)"></el-button>
   </el-input>
-  <h5 style="margin-left: -1390px;">If it does not work, the name may be incorrect</h5>
+  <h6 style="margin-left: -1390px;">If it does not work, the name may be incorrect</h6>
 </div>
 </template>
 
@@ -24,6 +24,6 @@ export default {
     margin-bottom: -5px;
     width: 350px;
     margin: auto;
-    left: -690px;
+    left: -680px;
   }
 </style>
