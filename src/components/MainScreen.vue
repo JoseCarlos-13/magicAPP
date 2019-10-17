@@ -1,17 +1,14 @@
 <template>
-  <div>
-    <logo></logo>
+  <el-row type="flex" justify="center">
     <container></container>
-  </div>
+  </el-row>
 </template>
 
 <script>
-import logo from './logo'
 import container from './container'
 
 export default {
   components: {
-    'logo': logo,
     'container': container
   }
 }
@@ -21,7 +18,6 @@ export default {
   body{
     background-image: url('../assets/background2.jpg');
     background-repeat: no-repeat;
-    height: 100%;
   }
 
   p{

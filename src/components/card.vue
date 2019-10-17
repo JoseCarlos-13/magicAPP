@@ -1,11 +1,16 @@
 <template>
-  <div v-if="card">
-    <h1><u>{{card.data.cards[0].name}}</u></h1>
-    <h2>{{card.data.cards[0].type}}</h2>
-    <img :src="card.data.cards[0].imageUrl" width="300" alt="" class="card-image">
-    <p>{{card.data.cards[0].text}}</p>
-    <p><i>{{card.data.cards[0].flavor}}</i></p>
-  </div>
+  <el-row v-if="card" type="flex" justify="center">
+    <el-col :span="12" :xs="20">
+      <el-col class="card">
+         <h1><u>{{card.data.cards[0].name}}</u></h1>
+        <h2>{{card.data.cards[0].type}}</h2>
+        <img :src="card.data.cards[0].imageUrl" class="card-image">
+
+        <p>{{card.data.cards[0].text}}</p>
+        <p><i>{{card.data.cards[0].flavor}}</i></p>
+      </el-col>
+    </el-col>
+  </el-row>
 </template>
 
 <script>
@@ -25,15 +30,16 @@ h2{
   font-family: 'Libre Baskerville', serif;
 }
 
+.card{
+  color: white;
+}
+
 .card-image{
   border-radius: 7px;
   border: solid 3.5px;
   border-color: white;
+  width: 250px;
+  height: 350px;
 }
 
-div{
-  color: white;
-  margin-top: -36px;
-
-}
 </style>
