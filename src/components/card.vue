@@ -6,7 +6,7 @@
         <h2>{{card.data.cards[0].type}}</h2>
         <img :src="card.data.cards[0].imageUrl" class="card-image">
 
-      <el-col>
+      <el-col class="card-description">
          <p>{{card.data.cards[0].text}}</p>
         <p><i>{{card.data.cards[0].flavor}}</i></p>
       </el-col>
@@ -24,6 +24,7 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT&display=swap');
 
 h1 {
   font-family: 'Libre Baskerville', serif;
@@ -35,6 +36,16 @@ h2{
 
 .card{
   color: white;
+}
+
+.card-description{
+  background-color: rgb(40, 49, 49);
+  font-family: 'Old Standard TT', serif;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid white;
+  margin-top: 25px;
+  font-size: 23px;
 }
 
 .card-image{
