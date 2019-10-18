@@ -1,6 +1,6 @@
 <template>
   <el-row type="flex" justify="center">
-    <el-col :span="22" :xs="20">
+    <el-col :span="22" :xs="22">
       <el-aside align="left">
         <img src="../assets/Mlogo.png" class="logo">
         <searchbar :getCard="getCard"></searchbar>
@@ -51,9 +51,13 @@ export default {
     background-attachment: fixed;
   }
 
+  .main-page{
+    margin-top: 20px;
+  }
+
   .logo{
-    width: 300px;
-    height: 120px;
+    width: 250px;
+    height: 95px;
   }
 
   p{

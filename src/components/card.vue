@@ -1,6 +1,6 @@
 <template>
   <el-row v-if="card" type="flex" justify="center">
-    <el-col :span="14" :xs="22">
+    <el-col :span="16" :xs="24">
       <el-col class="card">
          <h1><u>{{card.data.cards[0].name}}</u></h1>
         <h2>{{card.data.cards[0].type}}</h2>
@@ -45,7 +45,7 @@ h2{
   border-radius: 20px;
   border: 2px solid white;
   margin-top: 25px;
-  font-size: 23px;
+  font-size: 20px;
 }
 
 .card-image{
