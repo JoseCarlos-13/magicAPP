@@ -1,6 +1,8 @@
 <template>
   <el-row id="app">
-    <router-view/>
+    <el-col>
+      <router-view/>
+    </el-col>
   </el-row>
 </template>
 
@@ -17,6 +19,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 50px;
 }
 </style>
