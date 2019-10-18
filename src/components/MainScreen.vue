@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <el-row>
     <logo></logo>
     <container></container>
-  </div>
+  </el-row>
 </template>
 
 <script>
