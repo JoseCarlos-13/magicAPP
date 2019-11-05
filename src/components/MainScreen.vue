@@ -46,7 +46,7 @@ export default {
 
 <style>
   body{
-    background-image: url('../assets/background2.jpg');
+    background-image: url('../assets/background/background2.jpg');
     background-position: absolute;
     background-attachment: fixed;
   }
