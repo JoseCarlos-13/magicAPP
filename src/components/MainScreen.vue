@@ -7,7 +7,7 @@
       </el-aside>
 
       <el-col class="main-page">
-        <card :card="actualCard"></card>
+        <card :actualCard="actualCard"></card>
       </el-col>
     </el-col>
   </el-row>
@@ -16,7 +16,6 @@
 <script>
 import searchBar from './searchbar'
 import card from './card'
-import axios from 'axios'
 
 export default {
   components: {
@@ -32,10 +31,12 @@ export default {
 
   methods: {
     getCard (search) {
-      axios.get('https://api.magicthegathering.io/v1/cards?name=' + search).then(response => {
+      this.$https.get('cards?name=' + search).then(response => {
         this.actualCard = response
       })
-    }
+    },
+
+
   },
 
   mounted () {

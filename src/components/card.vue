@@ -1,24 +1,28 @@
 <template>
-  <el-row v-if="card" type="flex" justify="center">
+  <el-row v-if="actualCard" type="flex" justify="center">
     <el-col :span="16" :xs="24">
       <el-col class="card">
-         <h1><u>{{card.data.cards[0].name}}</u></h1>
-        <h2>{{card.data.cards[0].type}}</h2>
-        <img :src="card.data.cards[0].imageUrl" class="card-image">
+         <h1><u>{{actualCard.data.cards[0].name}}</u></h1>
+        <h2>{{actualCard.data.cards[0].type}}</h2>
+        <h2>{{actualCard.data.cards[0].rarity}}</h2>
+        <img :src="actualCard.data.cards[0].imageUrl" class="card-image">
+      </el-col>
 
       <el-col class="card-description">
-         <p>{{card.data.cards[0].text}}</p>
-        <p><i>{{card.data.cards[0].flavor}}</i></p>
+        <p>Number: {{actualCard.data.cards[0].number}}</p>
+        <p>Power: {{actualCard.data.cards[0].power}} / 
+          Toughness: {{actualCard.data.cards[0].toughness}}</p>
+        <p>{{actualCard.data.cards[0].text}}</p>
+        <p><i>{{actualCard.data.cards[0].flavor}}</i></p>
       </el-col>
 
-      </el-col>
     </el-col>
   </el-row>
 </template>
 
 <script>
 export default {
-  props: ['card']
+  props: ['actualCard']
 }
 </script>
 

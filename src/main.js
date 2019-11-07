@@ -3,11 +3,20 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.use(ElementUI)
 Vue.config.productionTip = false
+
+Vue.use({
+  install(Vue){
+    Vue.prototype.$https = axios.create({
+      baseURL: 'https://api.magicthegathering.io/v1/'
+    })
+  }
+})
 
 /* eslint-disable no-new */
 new Vue({
