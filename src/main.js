@@ -11,7 +11,7 @@ Vue.use(ElementUI)
 Vue.config.productionTip = false
 
 Vue.use({
-  install(Vue){
+  install (Vue) {
     Vue.prototype.$https = axios.create({
       baseURL: 'https://api.magicthegathering.io/v1/'
     })

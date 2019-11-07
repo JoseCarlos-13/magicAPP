@@ -34,9 +34,7 @@ export default {
       this.$https.get('cards?name=' + search).then(response => {
         this.actualCard = response
       })
-    },
-
-
+    }
   },
 
   mounted () {

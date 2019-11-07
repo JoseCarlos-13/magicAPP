@@ -10,7 +10,7 @@
 
       <el-col class="card-description">
         <p>Number: {{actualCard.data.cards[0].number}}</p>
-        <p>Power: {{actualCard.data.cards[0].power}} / 
+        <p>Power: {{actualCard.data.cards[0].power}} /
           Toughness: {{actualCard.data.cards[0].toughness}}</p>
         <p>{{actualCard.data.cards[0].text}}</p>
         <p><i>{{actualCard.data.cards[0].flavor}}</i></p>
