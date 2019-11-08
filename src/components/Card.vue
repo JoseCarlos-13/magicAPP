@@ -22,12 +22,7 @@
 
 <script>
 export default {
-  props: [
-    'actualCard'
-  ],
-  mounted () {
-    this.actualCard = this.$route.params.actualCard
-  }
+  props: ['actualCard']
 }
 </script>
 
