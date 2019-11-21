@@ -43,8 +43,7 @@ export default {
       const screenLoad = this.$loading({
         lock: true,
         background: 'black',
-        text: 'Loading',
-        color: 'rgba(0, 0, 6, 0.7)'
+        text: 'Loading'
       })
       setTimeout(() => {
         screenLoad.close()
@@ -52,7 +51,7 @@ export default {
     }
   },
 
-  beforeMount () {
+  created () {
     this.loadingScreen()
   },
 
