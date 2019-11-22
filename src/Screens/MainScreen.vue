@@ -47,7 +47,7 @@ export default {
       })
       setTimeout(() => {
         screenLoad.close()
-      }, 2000)
+      }, 3000)
     }
   },
 
