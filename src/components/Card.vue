@@ -45,10 +45,13 @@ h2{
 .card-description{
   background-color: rgb(40, 49, 49);
   font-family: 'Old Standard TT', serif;
-  padding: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
   border-radius: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   border: 2px solid white;
-  margin-top: 25px;
+  margin-top: 20px;
   font-size: 20px;
 }
 

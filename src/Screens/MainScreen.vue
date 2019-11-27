@@ -34,10 +34,25 @@ export default {
 
   methods: {
     getCard (search) {
-      axios.get(`https://api.magicthegathering.io/v1/cards?name="${search}"`).then(response => {
+      axios.get("https://api.magicthegathering.io/v1/cards?name=" + search).then(response => {
         this.actualCard = response.data
       })
+    },
+
+    loadingScreen(){
+      const screenLoad = this.$loading({
+        lock: true,
+        background: 'black',
+        text: 'Loading'
+      })
+      setTimeout(() => {
+        screenLoad.close()
+      }, 3000)
     }
+  },
+
+  created () {
+    this.loadingScreen()
   },
 
   mounted () {
