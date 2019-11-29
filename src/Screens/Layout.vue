@@ -31,10 +31,9 @@ export default {
 
   methods: {
     getCard (search) {
-      axios.get("https://api.magicthegathering.io/v1/cards?name=" + search).then(response => {
+      axios.get('https://api.magicthegathering.io/v1/cards?name=' + search).then(response => {
         this.actualCard = response.data
-        let actualcard = this.actualCard
-        this.$router.push({name: 'chosedcard', params: {actualcard}})
+        this.$router.push({path: 'thecard', query: {search}})
       })
     }
   }

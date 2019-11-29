@@ -24,8 +24,12 @@
 export default {
   data () {
     return {
-      actualCard: this.$route.params.actualcard
+      actualCard: this.$route.query.actualcard
     }
+  },
+
+  mounted(){
+    console.log(this.actualCard)
   }
 }
 </script>

@@ -11,7 +11,7 @@
 <script>
 export default {
   methods: {
-    loadingScreen(){
+    loadingScreen () {
       const screenLoad = this.$loading({
         lock: true,
         background: 'black',
