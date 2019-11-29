@@ -1,44 +1,16 @@
 <template>
   <el-row type="flex" justify="center">
     <el-col :span="22" :xs="22">
-       <el-aside align="left">
-        <router-link to="/">
-          <img src="../assets/Mlogo.png" class="logo">
-        </router-link>
-        <Searchbar :getCard="getCard"></Searchbar>
-      </el-aside>
-
       <el-row class="main-page">
-        <Card :actualCard="actualCard" />
+          <h1 id="main-text">Busque uma carta</h1>
       </el-row>
     </el-col>
   </el-row>
 </template>
 
 <script>
-import Searchbar from '../components/Searchbar'
-import Card from '../components/Card'
-import axios from 'axios'
-
 export default {
-  components: {
-    'Searchbar': Searchbar,
-    Card
-  },
-
-  data () {
-    return {
-      actualCard: null
-    }
-  },
-
   methods: {
-    getCard (search) {
-      axios.get("https://api.magicthegathering.io/v1/cards?name=" + search).then(response => {
-        this.actualCard = response.data
-      })
-    },
-
     loadingScreen(){
       const screenLoad = this.$loading({
         lock: true,
@@ -53,22 +25,24 @@ export default {
 
   created () {
     this.loadingScreen()
-  },
-
-  mounted () {
-    this.getCard('')
   }
 }
 </script>
 
 <style>
-  body{
-    background-image: url('../assets/background/background2.jpg');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
+
+  #main-text{
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    margin-left: 50px;
+    margin-right: 50px;
   }
+
   .main-page{
     margin-top: 20px;
+    color: white;
+    font-family: 'Libre Baskerville', serif;
   }
 
   .logo{

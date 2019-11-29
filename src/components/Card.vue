@@ -1,6 +1,6 @@
 <template>
-  <el-row v-if="actualCard" type="flex" justify="center">
-    <el-col :span="16" :xs="24">
+  <el-row v-if="actualCard">
+    <el-col :span="16" :xs="24" id="mainscreen">
       <el-col class="card">
         <h1><u>{{actualCard.cards[0].name}}</u></h1>
         <h2>{{actualCard.cards[0].type}}</h2>
@@ -22,7 +22,11 @@
 
 <script>
 export default {
-  props: ['actualCard']
+  data () {
+    return {
+      actualCard: this.$route.params.actualcard
+    }
+  }
 }
 </script>
 
@@ -36,6 +40,10 @@ h1 {
 
 h2{
   font-family: 'Libre Baskerville', serif;
+}
+
+#main-screen{
+  display: flex;
 }
 
 .card{
@@ -62,5 +70,4 @@ h2{
   width: 250px;
   height: 350px;
 }
-
 </style>
