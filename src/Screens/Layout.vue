@@ -33,7 +33,7 @@ export default {
     getCard (search) {
       axios.get('https://api.magicthegathering.io/v1/cards?name=' + search).then(response => {
         this.actualCard = response.data
-        this.$router.push({path: 'thecard', query: {search}})
+        this.$router.push({path: `thecard`, query: {actualCard: this.actualCard}})
       })
     }
   }

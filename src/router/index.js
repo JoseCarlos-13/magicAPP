@@ -10,11 +10,12 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '*',
+      path: '/',
+      redirect: 'mainscreen',
       component: Layout,
       children: [
         {
-          path: '/',
+          path: 'mainscreen',
           component: MainScreen,
           name: 'mainscreen'
         },

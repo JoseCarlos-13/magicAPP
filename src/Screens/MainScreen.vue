@@ -2,7 +2,7 @@
   <el-row type="flex" justify="center">
     <el-col :span="22" :xs="22">
       <el-row class="main-page">
-          <h1 id="main-text">Busque uma carta</h1>
+          <h1 id="main-text">Write a Card</h1>
       </el-row>
     </el-col>
   </el-row>

@@ -24,12 +24,12 @@
 export default {
   data () {
     return {
-      actualCard: this.$route.query.actualcard
+      actualCard: []
     }
   },
 
-  mounted(){
-    console.log(this.actualCard)
+  mounted () {
+    this.actualCard = this.$route.query.actualCard
   }
 }
 </script>
@@ -44,10 +44,6 @@ h1 {
 
 h2{
   font-family: 'Libre Baskerville', serif;
-}
-
-#main-screen{
-  display: flex;
 }
 
 .card{
