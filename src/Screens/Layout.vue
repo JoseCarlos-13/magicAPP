@@ -5,7 +5,7 @@
         <router-link to="/">
           <img src="../assets/Mlogo.png" class="logo">
         </router-link>
-        <Searchbar :getCard="getCard"></Searchbar>
+        <Searchbar :getCard="getCard"/>
       </el-aside>
       <el-row>
         <el-col>
@@ -32,8 +32,8 @@ export default {
   methods: {
     getCard (search) {
       axios.get('https://api.magicthegathering.io/v1/cards?name=' + search).then(response => {
-        this.actualCard = response.data
-        this.$router.push({path: `thecard`, query: {actualCard: this.actualCard}})
+        this.actualCard = response.data.cards
+        this.$router.push({name: `chosedcard`, params: { actualCard: this.actualCard[0] }})
       })
     }
   }

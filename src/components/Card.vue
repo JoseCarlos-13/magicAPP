@@ -1,19 +1,19 @@
 <template>
-  <el-row v-if="actualCard">
-    <el-col :span="16" :xs="24" id="mainscreen">
+  <el-row v-if="actualCard" type="flex" justify="center">
+    <el-col :span="18" :xs="24" id="mainscreen">
       <el-col class="card">
-        <h1><u>{{actualCard.cards[0].name}}</u></h1>
-        <h2>{{actualCard.cards[0].type}}</h2>
-        <h2>{{actualCard.cards[0].rarity}}</h2>
-        <img :src="actualCard.cards[0].imageUrl" class="card-image">
+        <h1><u>{{actualCard.name}}</u></h1>
+        <h2>{{actualCard.type}}</h2>
+        <h2>{{actualCard.rarity}}</h2>
+        <img :src="actualCard.imageUrl" class="card-image">
       </el-col>
 
       <el-col class="card-description">
-        <p>Number: {{actualCard.cards[0].number}}</p>
-        <p>Power: {{actualCard.cards[0].power}} /
-          Toughness: {{actualCard.cards[0].toughness}}</p>
-        <p>{{actualCard.cards[0].text}}</p>
-        <p><i>{{actualCard.cards[0].flavor}}</i></p>
+        <p>Number: {{actualCard.number}}</p>
+        <p>Power: {{actualCard.power}} /
+          Toughness: {{actualCard.toughness}}</p>
+        <p>{{actualCard.text}}</p>
+        <p><i>{{actualCard.flavor}}</i></p>
       </el-col>
 
     </el-col>
@@ -29,7 +29,7 @@ export default {
   },
 
   mounted () {
-    this.actualCard = this.$route.query.actualCard
+    this.actualCard = this.$route.params.actualCard
   }
 }
 </script>
