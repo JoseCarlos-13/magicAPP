@@ -2,7 +2,7 @@
   <el-row type="flex" justify="center">
     <el-col :span="22" :xs="22">
 
-      <el-row class="main-page">
+      <el-row class="main-page animate__animated animate__fadeInDown">
           <h1 id="main-text">Write the name of a Card</h1>
       </el-row>
 

@@ -1,26 +1,18 @@
 <template>
   <el-row type="flex" justify="center">
-    <el-col :xs="22" :sm="22" :md="22" :lg="22">
+    <el-col :xs="24" :sm="20" :md="18" :lg="18">
 
-      <el-aside>
+      <el-aside class="aside">
         <router-link to="/">
           <img src="../assets/Mlogo.png" class="logo">
         </router-link>
 
-        <el-row>
-          <el-col class="searchInput">
-            <el-input placeholder="Write the name of a card here"
-              v-model="search" >
-              <el-button slot="append" icon="el-icon-search"
-                @click="getCard(search)" />
-            </el-input>
-          </el-col>
-        </el-row>
+        <Searchbar :getCard="getCard" />
       </el-aside>
 
       <el-row>
         <el-col>
-          <router-view></router-view>
+         <router-view></router-view>
         </el-col>
       </el-row>
 
@@ -29,16 +21,16 @@
 </template>
 
 <script>
-import Searchbar from '../components/Searchbar'
 import axios from 'axios'
+import Searchbar from '../components/Searchbar'
 export default {
   components: {
-    'Searchbar': Searchbar
+    Searchbar
   },
+
   data () {
     return {
-      actualCard: null,
-      search: ''
+      actualCard: null
     }
   },
 
@@ -56,7 +48,6 @@ export default {
       axios.get('https://api.magicthegathering.io/v1/cards?name=' + search)
         .then(response => {
           this.actualCard = response.data.cards
-          this.search = ''
           this.$router.push({
             name: `chosedcard`,
             params: {
@@ -67,6 +58,10 @@ export default {
           console.log(e)
         })
     }
+  },
+
+  updated () {
+    this.getCard()
   }
 }
 </script>
@@ -77,6 +72,12 @@ export default {
     background-attachment: fixed;
     background-repeat: no-repeat;
   }
+
+  .aside{
+    display: flex;
+    flex-direction: column;
+  }
+
   .main-page{
     margin-top: 20px;
   }

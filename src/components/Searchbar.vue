@@ -1,7 +1,7 @@
 <template>
   <el-row>
     <el-col class="searchInput">
-      <el-input placeholder="Write the name of a card here"
+      <el-input placeholder="Write the name of a card"
         v-model="search" >
         <el-button slot="append" icon="el-icon-search"
           @click="getCard(search)" />
@@ -24,8 +24,8 @@ export default {
 
 <style>
   .searchInput{
-    width: 300px;
+    width: 260px;
     right: 590px;
-    color: white;
+    margin-left: 20px;
   }
 </style>

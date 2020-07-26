@@ -1,14 +1,15 @@
 <template>
-  <el-row v-if="actualCard" type="flex" justify="center">
-    <el-col :span="18" :xs="24" id="mainscreen">
-      <el-col class="card">
+  <el-row v-if="actualCard" display="flex" justify="center">
+    <el-col id="mainscreen"
+      :xs="24">
+      <el-col class="animate__animated animate__fadeIn card">
         <h1><u>{{actualCard.name}}</u></h1>
         <h2>{{actualCard.type}}</h2>
         <h2>{{actualCard.rarity}}</h2>
         <img :src="actualCard.imageUrl" class="card-image">
       </el-col>
 
-      <el-col class="card-description">
+      <el-col class="animate__animated animate__fadeIn card-description">
         <p>Number: {{actualCard.number}}</p>
         <p>Power: {{actualCard.power}} /
           Toughness: {{actualCard.toughness}}</p>
