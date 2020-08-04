@@ -12,7 +12,7 @@
 
       <el-row>
         <el-col>
-         <router-view></router-view>
+         <router-view />
         </el-col>
       </el-row>
 
@@ -21,7 +21,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import Searchbar from '../components/Searchbar'
 export default {
   components: {
@@ -35,33 +34,17 @@ export default {
   },
 
   methods: {
-    loadingScreen () {
-      // eslint-disable-next-line
-      const screenLoad = this.$loading({
-        lock: true,
-        background: 'black',
-        text: 'Loading'
-      })
-    },
-
     getCard (search) {
-      axios.get('https://api.magicthegathering.io/v1/cards?name=' + search)
-        .then(response => {
-          this.actualCard = response.data.cards
-          this.$router.push({
-            name: `chosedcard`,
-            params: {
-              actualCard: this.actualCard[0]
-            }
-          })
-        }).catch((e) => {
-          console.log(e)
+      this.$MTG.get('cards/search?q=' + search).then(response => {
+        this.actualCard = response.data.data
+        this.$router.push({
+          name: `chosedcard`,
+          params: { actualCard: this.actualCard[0] }
         })
+      }).catch((e) => {
+        console.log(e)
+      })
     }
-  },
-
-  updated () {
-    this.getCard()
   }
 }
 </script>
@@ -76,10 +59,6 @@ export default {
   .aside{
     display: flex;
     flex-direction: column;
-  }
-
-  .main-page{
-    margin-top: 20px;
   }
 
   .logo{

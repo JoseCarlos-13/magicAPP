@@ -21,7 +21,7 @@ export default new Router({
         },
 
         {
-          path: 'thecard',
+          path: 'thecard/:card',
           component: Card,
           name: 'chosedcard'
         }

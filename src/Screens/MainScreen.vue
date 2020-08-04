@@ -2,8 +2,11 @@
   <el-row type="flex" justify="center">
     <el-col :span="22" :xs="22">
 
-      <el-row class="main-page animate__animated animate__fadeInDown">
+      <el-row class="main-page animate__animated animate__fadeInUp">
           <h1 id="main-text">Write the name of a Card</h1>
+          <!-- <div v-for="card in listCards" :key="card">
+            {{card}}
+          </div> -->
       </el-row>
 
     </el-col>
@@ -12,6 +15,24 @@
 
 <script>
 export default {
+  data () {
+    return {
+      listCards: null
+    }
+  }
+
+  // methods: {
+  //   loadCards () {
+  //     this.$MTG.get().then(response => {
+  //       this.listCards = response.data
+  //       console.log(this.listCards)
+  //     })
+  //   }
+  // },
+
+  // mounted () {
+  //   this.loadCards()
+  // }
 }
 </script>
 
@@ -26,7 +47,7 @@ export default {
   }
 
   .main-page{
-    margin-top: 20px;
+    margin-top: 50px;
     color: white;
     font-family: 'Libre Baskerville', serif;
   }
