@@ -1,10 +1,10 @@
 <template>
   <el-row>
     <el-col>
-      <el-input placeholder="Write the name of the card"
+      <el-input placeholder="Write the complete card name"
         v-model="search" >
         <el-button slot="append" icon="el-icon-search"
-          @click="getCard(search)"/>
+          @click.prevent="searchCard(search), clearInput()"/>
       </el-input>
     </el-col>
   </el-row>
@@ -18,7 +18,13 @@ export default {
     }
   },
 
-  props: ['getCard']
+  methods: {
+    clearInput () {
+      this.search = ''
+    }
+  },
+
+  props: ['searchCard']
 }
 </script>
 

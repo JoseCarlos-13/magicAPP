@@ -3,14 +3,20 @@
     <el-col :xs="24" :sm="18" class="mainscreen">
       <el-col class="animate__animated animate__fadeIn card">
         <h1><u>{{actualCard.name}}</u></h1>
-        <img :src="actualCard.image_uris.normal" class="card-image">
+          <img v-if="actualCard.image_uris"
+            :src="actualCard.image_uris.normal"
+            class="card-image">
       </el-col>
 
       <el-col class="animate__animated animate__fadeIn card-description">
         <h3>Type: {{actualCard.type_line}}</h3>
         <h3>Rarity: {{actualCard.rarity}}</h3>
-        <p><b>Mana Cost: </b>{{actualCard.mana_cost}}</p>
+        <p v-if="actualCard.power && actualCard.toughness">
+          <b>Power: </b>{{actualCard.power}} |
+          <b>Toughness: </b>{{actualCard.toughness}}
+        </p>
         <p>{{actualCard.oracle_text}}</p>
+        <p><i>{{actualCard.flavor_text}}</i></p>
       </el-col>
 
     </el-col>
@@ -21,23 +27,12 @@
 export default {
   data () {
     return {
-      actualCard: [],
-      symbology: null
-    }
-  },
-
-  methods: {
-    loadSymbology () {
-      this.$MTG.get('/symbology').then(response => {
-        this.symbology = response.data
-        console.log(this.symbology)
-      })
+      actualCard: []
     }
   },
 
   mounted () {
-    this.loadSymbology()
-    this.actualCard = this.$route.params.actualCard
+    this.actualCard = this.$route.query.card
   }
 }
 </script>

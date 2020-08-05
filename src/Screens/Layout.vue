@@ -7,7 +7,7 @@
           <img src="../assets/Mlogo.png" class="logo">
         </router-link>
 
-        <Searchbar :getCard="getCard" />
+        <Searchbar :searchCard="searchCard"/>
       </el-aside>
 
       <el-row>
@@ -22,6 +22,7 @@
 
 <script>
 import Searchbar from '../components/Searchbar'
+
 export default {
   components: {
     Searchbar
@@ -29,21 +30,24 @@ export default {
 
   data () {
     return {
-      actualCard: null
+      actualCard: null,
+      fullscreenLoading: false
     }
   },
 
   methods: {
-    getCard (search) {
-      this.$MTG.get('cards/search?q=' + search).then(response => {
-        this.actualCard = response.data.data
-        this.$router.push({
-          name: `chosedcard`,
-          params: { actualCard: this.actualCard[0] }
+    searchCard (search) {
+      this.$router.replace(
+        this.$MTG.get(`cards/search?q=${search}`).then(response => {
+          this.actualCard = response.data.data
+          this.$router.push({
+            name: 'chosedcard',
+            query: { card: this.actualCard[0] }
+          })
+        }).catch((e) => {
+          console.log(e)
         })
-      }).catch((e) => {
-        console.log(e)
-      })
+      )
     }
   }
 }
