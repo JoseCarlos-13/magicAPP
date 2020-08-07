@@ -4,7 +4,7 @@
       <el-input placeholder="Write the complete card name"
         v-model="search" >
         <el-button slot="append" icon="el-icon-search"
-          @click.prevent="searchCard(search), clearInput()"/>
+          @click.prevent="searchCard(search)"/>
       </el-input>
     </el-col>
   </el-row>
@@ -15,12 +15,6 @@ export default {
   data () {
     return {
       search: ''
-    }
-  },
-
-  methods: {
-    clearInput () {
-      this.search = ''
     }
   },
 

@@ -11,7 +11,7 @@ Vue.use(ElementUI)
 Vue.config.productionTip = false
 
 Vue.use({
-  install () {
+  install (Vue) {
     Vue.prototype.$MTG = axios.create({
       baseURL: 'https://api.scryfall.com/'
     })
