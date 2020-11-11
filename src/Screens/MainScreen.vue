@@ -1,31 +1,38 @@
 <template>
   <el-row type="flex" justify="center">
     <el-col :span="22" :xs="22">
-      <el-row class="main-page">
-          <h1 id="main-text">Write a Card</h1>
+
+      <el-row class="main-page animate__animated animate__fadeIn">
+          <h1 id="main-text">Write the name of a Card</h1>
+          <!-- <div v-for="card in listCards" :key="card">
+            {{card}}
+          </div> -->
       </el-row>
+
     </el-col>
   </el-row>
 </template>
 
 <script>
 export default {
-  methods: {
-    loadingScreen () {
-      const screenLoad = this.$loading({
-        lock: true,
-        background: 'black',
-        text: 'Loading'
-      })
-      setTimeout(() => {
-        screenLoad.close()
-      }, 3000)
+  data () {
+    return {
+      listCards: null
     }
-  },
-
-  created () {
-    this.loadingScreen()
   }
+
+  // methods: {
+  //   loadCards () {
+  //     this.$MTG.get().then(response => {
+  //       this.listCards = response.data
+  //       console.log(this.listCards)
+  //     })
+  //   }
+  // },
+
+  // mounted () {
+  //   this.loadCards()
+  // }
 }
 </script>
 
@@ -40,7 +47,7 @@ export default {
   }
 
   .main-page{
-    margin-top: 20px;
+    margin-top: 50px;
     color: white;
     font-family: 'Libre Baskerville', serif;
   }

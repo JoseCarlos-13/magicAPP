@@ -1,11 +1,13 @@
 <template>
   <el-row>
-    <el-col class="searchInput">
-      <el-input placeholder="Write the name of a card here" v-model="search" >
-        <el-button slot="append" icon="el-icon-search" @click="getCard(search)" />
+    <el-col>
+      <el-input placeholder="Write the complete card name"
+        v-model="search" >
+        <el-button slot="append" icon="el-icon-search"
+          @click.prevent="searchCard(search)"/>
       </el-input>
     </el-col>
-</el-row>
+  </el-row>
 </template>
 
 <script>
@@ -16,14 +18,18 @@ export default {
     }
   },
 
-  props: ['getCard']
+  props: ['searchCard']
 }
 </script>
 
 <style>
-  .searchInput{
-    width: 300px;
+  .el-input__inner{
+    width: 223px;
     right: 590px;
+    margin-left: 20px;
     color: white;
+    font-family: fantasy;
+    font-size: 16px;
+    background-color:rgb(97, 92, 92);
   }
 </style>

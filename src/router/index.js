@@ -11,8 +11,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: 'mainscreen',
       component: Layout,
+      redirect: 'mainscreen',
       children: [
         {
           path: 'mainscreen',
@@ -21,7 +21,7 @@ export default new Router({
         },
 
         {
-          path: 'thecard',
+          path: 'thecard/:card',
           component: Card,
           name: 'chosedcard'
         }
