@@ -7,7 +7,8 @@
           <img src="../assets/Mlogo.png" class="logo">
         </router-link>
 
-        <Searchbar :searchCard="searchCard"/>
+        <Searchbar :searchCard="searchCard"
+                    @clear-input="searchCard"/>
       </el-aside>
 
       <el-row>
@@ -37,15 +38,13 @@ export default {
 
   methods: {
     searchCard (search) {
-      this.$router.replace(
-        this.$MTG.get(`cards/search?q=${search}`).then(response => {
-          this.actualCard = response.data.data
-          this.$router.push({
-            path: `theCard/:card`,
-            query: { card: this.actualCard }
-          })
+      this.$MTG.get(`cards/search?q=${search}`).then(response => {
+        this.actualCard = response.data.data
+        this.$router.push({
+          path: `theCard/:card`,
+          query: { card: this.actualCard }
         })
-      )
+      })
     }
   }
 }
