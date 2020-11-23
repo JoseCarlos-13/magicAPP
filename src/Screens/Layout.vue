@@ -41,8 +41,8 @@ export default {
         this.$MTG.get(`cards/search?q=${search}`).then(response => {
           this.actualCard = response.data.data
           this.$router.push({
-            name: `chosedcard`,
-            query: { card: this.actualCard[0] }
+            path: `theCard/:card`,
+            query: { card: this.actualCard }
           })
         })
       )

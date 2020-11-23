@@ -18,6 +18,20 @@ Vue.use({
   }
 })
 
+Vue.prototype.$MTG.interceptors.request.use(request => {
+  console.log(request)
+  return request
+}, (error) => {
+  return error
+})
+
+Vue.prototype.$MTG.interceptors.response.use(response => {
+  console.log(response)
+  return response
+}, (error) => {
+  return error
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

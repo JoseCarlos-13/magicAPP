@@ -1,24 +1,14 @@
 <template>
-  <el-row v-if="actualCard" type="flex" justify="center">
-    <el-col :xs="24" :sm="18" class="mainscreen">
-      <el-col class="animate__animated animate__fadeIn card">
-        <h1><u>{{actualCard.name}}</u></h1>
-          <img v-if="actualCard.image_uris"
-            :src="actualCard.image_uris.normal"
+  <el-row v-if="listCards" type="flex" justify="center">
+    <el-col :xs="24" :sm="18"
+      class="mainscreen animate__animated animate__fadeIn">
+      <el-row v-for="card in listCards" :key="card.id" class="card">
+        <el-col>
+          <h1><u>{{card.name}}</u></h1>
+          <img v-if="card.image_uris" :src="card.image_uris.normal"
             class="card-image">
-      </el-col>
-
-      <el-col class="animate__animated animate__fadeIn card-description">
-        <h3>Type: {{actualCard.type_line}}</h3>
-        <h3>Rarity: {{actualCard.rarity}}</h3>
-        <p v-if="actualCard.power && actualCard.toughness">
-          <b>Power: </b>{{actualCard.power}} |
-          <b>Toughness: </b>{{actualCard.toughness}}
-        </p>
-        <p>{{actualCard.oracle_text}}</p>
-        <p><i>{{actualCard.flavor_text}}</i></p>
-      </el-col>
-
+        </el-col>
+      </el-row>
     </el-col>
   </el-row>
 </template>
@@ -27,12 +17,12 @@
 export default {
   data () {
     return {
-      actualCard: []
+      listCards: []
     }
   },
 
   mounted () {
-    this.actualCard = this.$route.query.card
+    this.listCards = this.$route.query.card
   }
 }
 </script>

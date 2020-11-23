@@ -4,9 +4,6 @@
 
       <el-row class="main-page animate__animated animate__fadeIn">
           <h1 id="main-text">Write the name of a Card</h1>
-          <!-- <div v-for="card in listCards" :key="card">
-            {{card}}
-          </div> -->
       </el-row>
 
     </el-col>
@@ -15,24 +12,6 @@
 
 <script>
 export default {
-  data () {
-    return {
-      listCards: null
-    }
-  }
-
-  // methods: {
-  //   loadCards () {
-  //     this.$MTG.get().then(response => {
-  //       this.listCards = response.data
-  //       console.log(this.listCards)
-  //     })
-  //   }
-  // },
-
-  // mounted () {
-  //   this.loadCards()
-  // }
 }
 </script>
 
