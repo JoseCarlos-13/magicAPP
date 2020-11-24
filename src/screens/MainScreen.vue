@@ -21,8 +21,7 @@ export default {
   #main-text{
     color: white;
     text-shadow: 1px 1px 3px black;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin: 80px 50px 432px 50px;
   }
 
   .main-page{

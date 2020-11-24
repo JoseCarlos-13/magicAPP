@@ -1,10 +1,9 @@
 <template>
-  <el-row v-if="listCards" type="flex" justify="center">
-    <el-col :xs="24" :sm="18"
-      class="mainscreen animate__animated animate__fadeIn">
+  <el-row v-if="listCards">
+    <el-col
+      class="list animate__animated animate__fadeIn">
       <el-row v-for="card in listCards" :key="card.id" class="card">
         <el-col>
-          <h1><u>{{card.name}}</u></h1>
           <img v-if="card.image_uris" :src="card.image_uris.normal"
             class="card-image">
         </el-col>
@@ -35,17 +34,21 @@ h1 {
   font-family: 'Libre Baskerville', serif;
 }
 
-h2{
+h3{
   font-family: 'Libre Baskerville', serif;
 }
 
 .card{
   color: white;
-  margin-top: -10px;
+  margin: 10px;
 }
 
-.mainscreen{
+.list{
   margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .card-description{
@@ -69,6 +72,6 @@ h2{
   border: solid 3.5px;
   border-color: white;
   width: 250px;
-  height: 350px;
+  height: auto;
 }
 </style>
