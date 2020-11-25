@@ -3,7 +3,7 @@
     <el-col :span="22" :xs="22">
 
       <el-row class="main-page animate__animated animate__fadeIn">
-          <h1 id="main-text">Write the name of a Card</h1>
+        <h1 id="main-text">Write the name of a Card</h1>
       </el-row>
 
     </el-col>
@@ -21,7 +21,7 @@ export default {
   #main-text{
     color: white;
     text-shadow: 1px 1px 3px black;
-    margin: 80px 50px 432px 50px;
+    margin: 80px 50px 450px 50px;
   }
 
   .main-page{

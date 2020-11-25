@@ -45,6 +45,7 @@ h3{
 
 .list{
   margin-top: 50px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: center;
   flex-direction: row;

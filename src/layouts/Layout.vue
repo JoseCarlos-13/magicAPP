@@ -1,16 +1,13 @@
 <template>
-  <el-row class="mainscreen">
+  <el-row type="flex" justify="center">
     <el-col :xs="24" :sm="24" :md="24" :lg="24">
-
       <Header
       :searchCard="searchCard"
       @clear-input="searchCard"/>
 
-      <el-row>
-        <el-col>
-         <router-view />
-        </el-col>
-      </el-row>
+      <el-main>
+        <router-view />
+      </el-main>
 
       <Footer/>
     </el-col>
@@ -54,11 +51,6 @@ export default {
     background-image: url('../assets/background/background2.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
-  }
-
-  .mainscreen{
-    display: flex;
-    flex-direction: column;
   }
 
   p{
