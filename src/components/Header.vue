@@ -1,10 +1,10 @@
 <template>
   <el-row class="topbar">
-    <router-link to="/">
-      <img src="../assets/Mlogo.png" width="150">
+    <router-link to="/" class="logo">
+      <img src="../assets/Mlogo.png" width="250">
     </router-link>
 
-    <Searchbar :searchCard="searchCard"/>
+    <Searchbar :searchCard="searchCard" />
   </el-row>
 </template>
 
@@ -24,7 +24,12 @@ export default {
   .topbar{
     display: flex;
     flex-wrap: wrap;
-    padding: 15px 10px 8px 0px;
-    background-color: darkorange;
+    border-bottom: 1px solid white;
+    justify-content: flex-start;
+    padding: 15px 0px 10px 10px;
+  }
+
+  .logo{
+    margin-top: -16px;
   }
 </style>

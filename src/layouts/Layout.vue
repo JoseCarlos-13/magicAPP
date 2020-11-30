@@ -1,9 +1,7 @@
 <template>
   <el-row type="flex" justify="center">
-    <el-col :xs="24" :sm="24" :md="24" :lg="24">
-      <Header
-      :searchCard="searchCard"
-      @clear-input="searchCard"/>
+    <el-col :xs="24" :sm="24" :md="24" :lg="20">
+      <Header :searchCard="searchCard" />
 
       <el-main>
         <router-view />

@@ -17,7 +17,7 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: darkorange;
+    border-top: 1px solid white;
     padding: 20px 0px 20px 0px;
   }
 </style>

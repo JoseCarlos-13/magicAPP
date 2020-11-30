@@ -19,7 +19,6 @@ Vue.use({
 })
 
 Vue.prototype.$MTG.interceptors.request.use(request => {
-  console.log(request)
   return request
 }, (error) => {
   return error

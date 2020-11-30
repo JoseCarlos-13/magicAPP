@@ -34,8 +34,4 @@ export default {
     width: 250px;
     height: 95px;
   }
-
-  p{
-    color: white;
-  }
 </style>
