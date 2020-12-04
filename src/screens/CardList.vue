@@ -1,24 +1,13 @@
 <template>
-  <el-row v-if="actualCard" type="flex" justify="center">
-    <el-col :xs="24" :sm="18" class="mainscreen">
-      <el-col class="animate__animated animate__fadeIn card">
-        <h1><u>{{actualCard.name}}</u></h1>
-          <img v-if="actualCard.image_uris"
-            :src="actualCard.image_uris.normal"
+  <el-row v-if="listCards">
+    <el-col
+      class="list animate__animated animate__fadeIn">
+      <el-row v-for="card in listCards" :key="card.id" class="card">
+        <el-col>
+          <img v-if="card.image_uris" :src="card.image_uris.normal"
             class="card-image">
-      </el-col>
-
-      <el-col class="animate__animated animate__fadeIn card-description">
-        <h3>Type: {{actualCard.type_line}}</h3>
-        <h3>Rarity: {{actualCard.rarity}}</h3>
-        <p v-if="actualCard.power && actualCard.toughness">
-          <b>Power: </b>{{actualCard.power}} |
-          <b>Toughness: </b>{{actualCard.toughness}}
-        </p>
-        <p>{{actualCard.oracle_text}}</p>
-        <p><i>{{actualCard.flavor_text}}</i></p>
-      </el-col>
-
+        </el-col>
+      </el-row>
     </el-col>
   </el-row>
 </template>
@@ -27,12 +16,12 @@
 export default {
   data () {
     return {
-      actualCard: []
+      listCards: []
     }
   },
 
   mounted () {
-    this.actualCard = this.$route.query.card
+    this.listCards = this.$route.query.card
   }
 }
 </script>
@@ -45,17 +34,22 @@ h1 {
   font-family: 'Libre Baskerville', serif;
 }
 
-h2{
+h3{
   font-family: 'Libre Baskerville', serif;
 }
 
 .card{
   color: white;
-  margin-top: -10px;
+  margin: 10px;
 }
 
-.mainscreen{
+.list{
   margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .card-description{
@@ -79,6 +73,6 @@ h2{
   border: solid 3.5px;
   border-color: white;
   width: 250px;
-  height: 350px;
+  height: auto;
 }
 </style>

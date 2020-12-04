@@ -1,37 +1,30 @@
 <template>
   <el-row type="flex" justify="center">
-    <el-col :xs="24" :sm="20" :md="18" :lg="18">
+    <el-col :xs="24" :sm="24" :md="24" :lg="24">
+      <Header :searchCard="searchCard" />
 
-      <el-aside class="aside">
-        <router-link to="/">
-          <img src="../assets/Mlogo.png" class="logo">
-        </router-link>
+      <el-main>
+        <router-view />
+      </el-main>
 
-        <Searchbar :searchCard="searchCard"/>
-      </el-aside>
-
-      <el-row>
-        <el-col>
-         <router-view />
-        </el-col>
-      </el-row>
-
+      <Footer/>
     </el-col>
   </el-row>
 </template>
 
 <script>
-import Searchbar from '../components/Searchbar'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export default {
   components: {
-    Searchbar
+    Header,
+    Footer
   },
 
   data () {
     return {
-      actualCard: null,
-      fullscreenLoading: false
+      actualCard: null
     }
   },
 
@@ -42,7 +35,7 @@ export default {
           this.actualCard = response.data.data
           this.$router.push({
             name: `chosedcard`,
-            query: { card: this.actualCard[0] }
+            query: { card: this.actualCard }
           })
         })
       )
@@ -56,16 +49,6 @@ export default {
     background-image: url('../assets/background/background2.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
-  }
-
-  .aside{
-    display: flex;
-    flex-direction: column;
-  }
-
-  .logo{
-    width: 250px;
-    height: 95px;
   }
 
   p{
