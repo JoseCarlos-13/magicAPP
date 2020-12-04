@@ -19,16 +19,18 @@ Vue.use({
 })
 
 Vue.prototype.$MTG.interceptors.request.use(request => {
+  console.log(request)
   return request
 }, (error) => {
-  return error
+  return Promise.reject(error)
 })
 
 Vue.prototype.$MTG.interceptors.response.use(response => {
   console.log(response)
+
   return response
 }, (error) => {
-  return error
+  return Promise.reject(error)
 })
 
 /* eslint-disable no-new */
