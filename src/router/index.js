@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import MainScreen from '../screens/MainScreen'
 import Layout from '../layouts/Layout'
 import CardList from '../screens/CardList'
+import CardScreen from '../screens/CardScreen'
 
 Vue.use(Router)
 
@@ -21,8 +22,14 @@ export default new Router({
         },
 
         {
-          path: 'thecard/:card',
+          path: 'thecardlist/:cardlist',
           component: CardList,
+          name: 'cardlist'
+        },
+
+        {
+          path: 'chosedcard/:card',
+          component: CardScreen,
           name: 'chosedcard'
         }
       ]

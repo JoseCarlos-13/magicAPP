@@ -5,7 +5,7 @@
       <el-row v-for="card in listCards" :key="card.id" class="card">
         <el-col>
           <img v-if="card.image_uris" :src="card.image_uris.normal"
-            class="card-image">
+            class="card-image" @click="chosedCard(card)">
         </el-col>
       </el-row>
     </el-col>
@@ -20,8 +20,18 @@ export default {
     }
   },
 
+  methods: {
+    chosedCard (card) {
+      console.log(card)
+      this.$router.push({
+        path: 'chosedcard/:card',
+        query: { chosedcard: card }
+      })
+    }
+  },
+
   mounted () {
-    this.listCards = this.$route.query.card
+    this.listCards = this.$route.query.cardlist
   }
 }
 </script>

@@ -21,4 +21,8 @@ export default {
 </script>
 
 <style>
+  .el-input__inner{
+    background-color: rgb(104, 104, 104);
+    color: white;
+  }
 </style>
