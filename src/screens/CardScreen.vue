@@ -5,7 +5,7 @@
         <img :src="chosedCard.image_uris.png">
       </div>
 
-      <el-col class="card-description" :xs="24" :sm="24" :md="24" :lg="14">
+      <el-col class="card-description" v-if="symbology" :xs="24" :sm="24" :md="24" :lg="14">
         <h2><b>Name: </b>{{chosedCard.name}}</h2>
         <h3><b>Type: </b>{{chosedCard.type_line}}</h3>
         <p><b>Description: </b>{{chosedCard.oracle_text}}</p>
@@ -19,12 +19,23 @@
 export default {
   data () {
     return {
-      chosedCard: null
+      chosedCard: null,
+      symbology: null,
+      image: null
+    }
+  },
+
+  methods: {
+    returnSymbols () {
+      this.$MTG.get(`https://api.scryfall.com/symbology`).then(response => {
+        this.symbology = response.data.data
+      })
     }
   },
 
   mounted () {
     this.chosedCard = this.$route.query.chosedcard
+    this.returnSymbols()
   }
 }
 </script>
