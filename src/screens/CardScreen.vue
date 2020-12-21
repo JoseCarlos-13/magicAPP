@@ -6,7 +6,7 @@
       </div>
 
       <el-col class="card-description" :xs="24" :sm="24" :md="24" :lg="14">
-        <h2>{{chosedCard.name}}</h2>
+        <h2><b>Name: </b>{{chosedCard.name}}</h2>
         <h3><b>Type: </b>{{chosedCard.type_line}}</h3>
         <p><b>Description: </b>{{chosedCard.oracle_text}}</p>
         <p><b>Mana cost: </b>{{chosedCard.mana_cost}}</p>
