@@ -5,8 +5,8 @@
         <img :src="chosedCard.image_uris.png">
       </div>
 
-      <el-col class="card-description" :xs="24" :sm="24" :md="24" :lg="16">
-        <h1>{{chosedCard.name}}</h1>
+      <el-col class="card-description" :xs="24" :sm="24" :md="24" :lg="14">
+        <h2>{{chosedCard.name}}</h2>
         <h3><b>Type: </b>{{chosedCard.type_line}}</h3>
         <p><b>Description: </b>{{chosedCard.oracle_text}}</p>
         <p><b>Mana cost: </b>{{chosedCard.mana_cost}}</p>
@@ -42,35 +42,30 @@ export default {
   }
 
   .chosedCard {
-    margin: 55px 100px 55px 100px;
+    margin: 50px 0px 50px 0px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
   }
 
   .chosedCard img {
     border: 3px solid white;
     overflow: hidden;
     border-radius: 10px;
-    width: 290px;
+    width: 300px;
   }
 
-  .card-description {
-    background-color: rgba(90, 90, 90, 0.803);
-    border: 5px inset white;
-    padding: 20px 50px auto 50px;
-    margin: 0 50px auto 50px;
-  }
-
-  .fade-enter {
-    opacity: 0
-  }
-
-  .fade-enter-to {
-    opacity: 1
-  }
-
-  .fade-enter-active {
-    transition: opacity 1s;
+   .card-description {
+    color: white;
+    background-color: rgb(40, 49, 49);
+    font-family: 'Old Standard TT', serif;
+    border-radius: 20px;
+    text-align: center;
+    word-wrap: break-word;
+    padding: 20px 30px 20px 30px;
+    border: 5px outset white;
+    font-size: 20px;
+    margin: 20px 0px auto 0px;
   }
 </style>

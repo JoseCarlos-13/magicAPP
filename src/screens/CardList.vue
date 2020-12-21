@@ -65,22 +65,6 @@ export default {
     flex-wrap: wrap;
   }
 
-  .card-description {
-    color: white;
-    background-color: rgb(40, 49, 49);
-    font-family: 'Old Standard TT', serif;
-    padding-left: 50px;
-    padding-right: 50px;
-    border-radius: 20px;
-    padding-top: 5px;
-    text-align: center;
-    padding-bottom: 5px;
-    border: 2px solid white;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    font-size: 20px;
-  }
-
   .card-image {
     border-radius: 7px;
     border: solid 3.5px;

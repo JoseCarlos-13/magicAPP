@@ -5,7 +5,9 @@
         <Header :searchCard="searchCard" />
 
         <el-main>
-          <router-view />
+          <transition name="fade" mode="out-in">
+            <router-view />
+          </transition>
         </el-main>
 
         <Footer/>
@@ -32,15 +34,13 @@ export default {
 
   methods: {
     searchCard (search) {
-      this.$router.replace(
-        this.$MTG.get(`cards/search?q=${search}`).then(response => {
-          this.actualCard = response.data.data
-          this.$router.push({
-            name: `cardlist`,
-            query: { cardList: this.actualCard }
-          })
+      this.$MTG.get(`cards/search?q=${search}`).then(response => {
+        this.actualCard = response.data.data
+        this.$router.push({
+          name: `cardlist`,
+          query: { cardList: this.actualCard }
         })
-      )
+      })
     }
   }
 }
@@ -55,5 +55,17 @@ export default {
 
   p {
     color: white;
+  }
+
+  .fade-enter {
+    opacity: 0;
+  }
+
+  .fade-enter-to {
+    opacity: 1;
+  }
+
+  .fade-enter-active {
+    transition: opacity 1s;
   }
 </style>
