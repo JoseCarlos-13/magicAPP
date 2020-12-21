@@ -1,15 +1,17 @@
 <template>
-  <el-row type="flex" justify="center">
-    <el-col :xs="24" :sm="24" :md="24" :lg="24">
-      <Header :searchCard="searchCard" />
+  <div>
+    <el-row type="flex" justify="center">
+      <el-col :xs="24" :sm="24" :md="24" :lg="24">
+        <Header :searchCard="searchCard" />
 
-      <el-main>
-        <router-view />
-      </el-main>
+        <el-main>
+          <router-view />
+        </el-main>
 
-      <Footer/>
-    </el-col>
-  </el-row>
+        <Footer/>
+      </el-col>
+    </el-row>
+  </div>
 </template>
 
 <script>
@@ -35,7 +37,7 @@ export default {
           this.actualCard = response.data.data
           this.$router.push({
             name: `cardlist`,
-            query: { cardlist: this.actualCard }
+            query: { cardList: this.actualCard }
           })
         })
       )
@@ -45,13 +47,13 @@ export default {
 </script>
 
 <style>
-  body{
+  body {
     background-image: url('../assets/background/background2.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
   }
 
-  p{
+  p {
     color: white;
   }
 </style>
