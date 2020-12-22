@@ -9,7 +9,7 @@
          class="card-description" v-if="symbology">
         <h2><b>Name: </b>{{ chosedCard.name }}</h2>
         <h3><b>Type: </b>{{ chosedCard.type_line }}</h3>
-        <p><b>Mana cost: </b> </p>
+        <p><b>Mana cost: </b> {{ chosedCard.mana_cost }} </p>
         <p v-show="chosedCard.power && chosedCard.toughness">
           <b>Power/Toughness: </b>
           {{ chosedCard.power }}/{{ chosedCard.toughness }}
