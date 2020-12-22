@@ -25,6 +25,7 @@ export default {
     chosedCard (card) {
       this.$MTG.get(`https://api.scryfall.com/cards/named?fuzzy=${card.name}`)
         .then(response => {
+          console.log(response.data)
           this.$router.push({
             path: 'chosedcard/:card',
             query: { chosedcard: response.data }

@@ -5,11 +5,21 @@
         <img :src="chosedCard.image_uris.png">
       </div>
 
-      <el-col class="card-description" v-if="symbology" :xs="24" :sm="24" :md="24" :lg="14">
-        <h2><b>Name: </b>{{chosedCard.name}}</h2>
-        <h3><b>Type: </b>{{chosedCard.type_line}}</h3>
-        <p><b>Description: </b>{{chosedCard.oracle_text}}</p>
-        <p><b>Mana cost: </b>{{chosedCard.mana_cost}}</p>
+      <el-col :xs="24" :sm="24" :md="24" :lg="14"
+         class="card-description" v-if="symbology">
+        <h2><b>Name: </b>{{ chosedCard.name }}</h2>
+        <h3><b>Type: </b>{{ chosedCard.type_line }}</h3>
+        <p><b>Mana cost: </b> </p>
+        <p v-show="chosedCard.power && chosedCard.toughness">
+          <b>Power/Toughness: </b>
+          {{ chosedCard.power }}/{{ chosedCard.toughness }}
+        </p>
+        <p v-show="chosedCard.oracle_text">
+          <b>Description: </b>{{ chosedCard.oracle_text }}
+        </p>
+        <p v-show="chosedCard.flavor_text">
+          <b>Flavor text: </b>{{ chosedCard.flavor_text }}
+        </p>
       </el-col>
     </el-row>
   </div>
@@ -20,8 +30,7 @@ export default {
   data () {
     return {
       chosedCard: null,
-      symbology: null,
-      image: null
+      symbology: null
     }
   },
 
@@ -65,6 +74,7 @@ export default {
     overflow: hidden;
     border-radius: 10px;
     width: 300px;
+    margin: 0px 0px 20px 0px;
   }
 
    .card-description {
@@ -77,6 +87,5 @@ export default {
     padding: 20px 30px 20px 30px;
     border: 5px outset white;
     font-size: 20px;
-    margin: 20px 0px auto 0px;
   }
 </style>
