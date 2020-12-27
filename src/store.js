@@ -1,32 +1,48 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { Card } from './services'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    actualCard: []
+    cardsList: [],
+    card: null
   },
 
   getters: {
-    getActualCard(state){
-      return state.actualCard
+    cardsList (state) {
+      return state.cardsList
+    },
+
+    card (state) {
+      return state.card
     }
   },
 
   mutations: {
-    setActualCard(state, payload){
-      return state.actualCard = payload
+    setCardsList (state, cardsList) {
+      state.cardsList = cardsList
+    },
+
+    setCard (state, card) {
+      state.card = card
     }
   },
 
   actions: {
-    getCardsFromName({commit}, payload){
-      console.log(payload)
-      this.$MTG.get(`cards/search?q=${payload}`).then(response => {
-        commit('setActualCard', response.data.data)
+    loadCardsList ({ commit }, payload) {
+      return Card.getCardsList(payload).then(response => {
+        commit('setCardsList', response.data.data)
         return response
-      }).catch(response => response)
+      })
+    },
+
+    loadCard ({ commit }, payload) {
+      return Card.getCard(payload).then(response => {
+        commit('setCard', response.data)
+        return response
+      })
     }
   }
 })

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <el-row v-if="listCards">
+    <el-row v-if="cardsList">
       <el-col class="list">
-        <el-row v-for="card in listCards" :key="card.id" class="card">
+        <el-row v-for="card in cardsList" :key="card.id" class="card">
           <el-col>
             <img v-if="card.image_uris" :src="card.image_uris.normal"
               class="card-image" @click="chosedCard(card)">
@@ -14,28 +14,33 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 export default {
-  data () {
-    return {
-      listCards: []
-    }
+  computed: {
+    ...mapGetters([
+      'cardsList'
+    ])
   },
 
   methods: {
+    ...mapActions([
+      'loadCardsList'
+    ]),
+
     chosedCard (card) {
-      this.$MTG.get(`https://api.scryfall.com/cards/named?fuzzy=${card.name}`)
-        .then(response => {
-          console.log(response.data)
-          this.$router.push({
-            path: 'chosedcard/:card',
-            query: { chosedcard: response.data }
-          })
-        })
+      this.$router.push({
+        path: 'chosedcard/:card',
+        query: { chosedcard: card }
+      })
     }
   },
 
-  mounted () {
-    this.listCards = this.$route.query.cardList
+  beforeMount () {
+    this.loadCardsList(this.$route.query.cardsList)
+  },
+
+  updated () {
+    this.loadCardsList(this.$route.query.cardsList)
   }
 }
 </script>
@@ -72,5 +77,11 @@ export default {
     border-color: white;
     width: 250px;
     height: auto;
+    overflow: hidden;
+  }
+
+  .card-image:hover{
+    box-shadow: 0px 0px 15px white;
+    transition: ease 0.8s;
   }
 </style>

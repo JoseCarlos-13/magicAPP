@@ -1,24 +1,24 @@
 <template>
   <div>
-    <el-row class="chosedCard" v-if="chosedCard">
+    <el-row class="chosedCard" v-if="card">
       <div>
-        <img :src="chosedCard.image_uris.png">
+        <img :src="card.image_uris.png">
       </div>
 
       <el-col :xs="24" :sm="24" :md="24" :lg="14"
-         class="card-description" v-if="symbology">
-        <h2><b>Name: </b>{{ chosedCard.name }}</h2>
-        <h3><b>Type: </b>{{ chosedCard.type_line }}</h3>
-        <p><b>Mana cost: </b> {{ chosedCard.mana_cost }} </p>
-        <p v-show="chosedCard.power && chosedCard.toughness">
+         class="card-description">
+        <h2><b>Name: </b>{{ card.name }}</h2>
+        <h3><b>Type: </b>{{ card.type_line }}</h3>
+        <p><b>Mana cost: </b> {{ card.mana_cost }} </p>
+        <p v-show="card.power && card.toughness">
           <b>Power/Toughness: </b>
-          {{ chosedCard.power }}/{{ chosedCard.toughness }}
+          {{ card.power }}/{{ card.toughness }}
         </p>
-        <p v-show="chosedCard.oracle_text">
-          <b>Description: </b>{{ chosedCard.oracle_text }}
+        <p v-show="card.oracle_text">
+          <b>Description: </b>{{ card.oracle_text }}
         </p>
-        <p v-show="chosedCard.flavor_text">
-          <b>Flavor text: </b>{{ chosedCard.flavor_text }}
+        <p v-show="card.flavor_text">
+          <i>{{ card.flavor_text }}</i>
         </p>
       </el-col>
     </el-row>
@@ -26,25 +26,22 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 export default {
-  data () {
-    return {
-      chosedCard: null,
-      symbology: null
-    }
+  computed: {
+    ...mapGetters([
+      'card'
+    ])
   },
 
   methods: {
-    returnSymbols () {
-      this.$MTG.get(`https://api.scryfall.com/symbology`).then(response => {
-        this.symbology = response.data.data
-      })
-    }
+    ...mapActions([
+      'loadCard'
+    ])
   },
 
-  mounted () {
-    this.chosedCard = this.$route.query.chosedcard
-    this.returnSymbols()
+  beforeMount () {
+    this.loadCard(this.$route.query.chosedcard.name)
   }
 }
 </script>

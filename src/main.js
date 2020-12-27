@@ -1,30 +1,27 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import App from './App'
+import App from '../src/App'
 import router from './router'
 import axios from 'axios'
+import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 
-Vue.use({
-  install (Vue) {
-    Vue.prototype.$MTG = axios.create({
-      baseURL: 'https://api.scryfall.com/'
-    })
-  }
+export const MTG = axios.create({
+  baseURL: 'https://api.scryfall.com/'
 })
 
-Vue.prototype.$MTG.interceptors.request.use(request => {
+MTG.interceptors.request.use(request => {
   return request
 }, (error) => {
   return Promise.reject(error)
 })
 
-Vue.prototype.$MTG.interceptors.response.use(response => {
+MTG.interceptors.response.use(response => {
   return response
 }, (error) => {
   return Promise.reject(error)
@@ -34,6 +31,7 @@ Vue.prototype.$MTG.interceptors.response.use(response => {
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

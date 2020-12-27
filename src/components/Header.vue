@@ -4,7 +4,7 @@
       <img src="../assets/Mlogo.png" width="250">
     </router-link>
 
-    <Searchbar :searchCard="searchCard" />
+    <Searchbar />
   </el-row>
 </template>
 
@@ -14,9 +14,7 @@ import Searchbar from '../components/Searchbar'
 export default {
   components: {
     Searchbar
-  },
-
-  props: ['searchCard']
+  }
 }
 </script>
 
@@ -27,7 +25,7 @@ export default {
     border-bottom: 1px solid white;
     justify-content: flex-start;
     padding: 15px 0px 10px 10px;
-    background-image: url('../assets/noma.jpg');
+    background-image: url('../assets/noma.png');
   }
 
   .logo{

@@ -19,6 +19,6 @@ export default {
     justify-content: center;
     border-top: 1px solid white;
     padding: 20px 0px 20px 0px;
-    background-image: url('../assets/nomu.jpg');
+    background-image: url('../assets/nomu.png');
   }
 </style>
