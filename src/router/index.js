@@ -37,7 +37,7 @@ export default new Router({
         {
           path: '404',
           component: RouteNotFound,
-          name: 'not found'
+          name: 'notfound'
         }
       ]
     }

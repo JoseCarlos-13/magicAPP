@@ -9,14 +9,16 @@
          class="card-description">
         <h2><b>Name: </b>{{ card.name }}</h2>
         <h3><b>Type: </b>{{ card.type_line }}</h3>
-        <p><b>Mana cost: </b> {{ card.mana_cost }} </p>
+
         <p v-show="card.power && card.toughness">
           <b>Power/Toughness: </b>
           {{ card.power }}/{{ card.toughness }}
         </p>
+
         <p v-show="card.oracle_text">
           <b>Description: </b>{{ card.oracle_text }}
         </p>
+
         <p v-show="card.flavor_text">
           <i>{{ card.flavor_text }}</i>
         </p>
@@ -26,10 +28,10 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 export default {
   computed: {
-    ...mapGetters([
+    ...mapState([
       'card'
     ])
   },

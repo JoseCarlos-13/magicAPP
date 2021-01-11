@@ -7,7 +7,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     cardsList: [],
-    card: null
+    card: null,
+    search: ''
   },
 
   getters: {
@@ -17,6 +18,10 @@ export default new Vuex.Store({
 
     card (state) {
       return state.card
+    },
+
+    search (state) {
+      return state.search
     }
   },
 
@@ -27,6 +32,10 @@ export default new Vuex.Store({
 
     setCard (state, card) {
       state.card = card
+    },
+
+    setSearch (state, search) {
+      state.search = search
     }
   },
 
@@ -43,6 +52,10 @@ export default new Vuex.Store({
         commit('setCard', response.data)
         return response
       })
+    },
+
+    inputSearch ({ commit }, payload) {
+      commit('setSearch', payload)
     }
   }
 })
