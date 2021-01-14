@@ -1,22 +1,35 @@
 <template>
   <el-row>
     <el-input placeholder="Write the card name here"
-      v-model="search" @keyup.enter="searchCard">
+      :value="search" @input="inputSearch">
         <el-button slot="append" icon="el-icon-search"
-        @click="searchCard(search)"/>
+        @click="searchingCard(search)"/>
     </el-input>
   </el-row>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 export default {
-  data () {
-    return {
-      search: ''
-    }
+  computed: {
+    ...mapState([
+      'search'
+    ])
   },
 
-  props: ['searchCard']
+  methods: {
+    ...mapActions([
+      'inputSearch'
+    ]),
+
+    searchingCard (search) {
+      this.inputSearch(search)
+      this.$router.push({
+        name: `cardlist`,
+        query: { cardsList: search }
+      })
+    }
+  }
 }
 </script>
 

@@ -4,6 +4,7 @@ import MainScreen from '../screens/MainScreen'
 import Layout from '../layouts/Layout'
 import CardList from '../screens/CardList'
 import CardScreen from '../screens/CardScreen'
+import RouteNotFound from '../screens/404'
 
 Vue.use(Router)
 
@@ -31,6 +32,12 @@ export default new Router({
           path: 'chosedcard/:card',
           component: CardScreen,
           name: 'chosedcard'
+        },
+
+        {
+          path: '404',
+          component: RouteNotFound,
+          name: 'notfound'
         }
       ]
     }

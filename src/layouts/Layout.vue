@@ -2,7 +2,7 @@
   <div>
     <el-row type="flex" justify="center">
       <el-col :xs="24" :sm="24" :md="24" :lg="24">
-        <Header :searchCard="searchCard" />
+        <Header />
 
         <el-main>
           <transition name="fade" mode="out-in">
@@ -24,31 +24,13 @@ export default {
   components: {
     Header,
     Footer
-  },
-
-  data () {
-    return {
-      actualCard: null
-    }
-  },
-
-  methods: {
-    searchCard (search) {
-      this.$MTG.get(`cards/search?q=${search}`).then(response => {
-        this.actualCard = response.data.data
-        this.$router.push({
-          name: `cardlist`,
-          query: { cardList: this.actualCard }
-        })
-      })
-    }
   }
 }
 </script>
 
 <style>
   body {
-    background-image: url('../assets/background/background2.jpg');
+    background-image: url('../assets/background/background2.png');
     background-attachment: fixed;
     background-repeat: no-repeat;
   }
