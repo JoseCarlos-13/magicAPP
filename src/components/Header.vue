@@ -1,6 +1,6 @@
 <template>
   <el-row class="topbar">
-    <router-link to="/" class="logo">
+    <router-link to="/mainscreen" class="logo">
       <img src="../assets/Mlogo.png" width="250">
     </router-link>
 
