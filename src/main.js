@@ -22,6 +22,7 @@ MTG.interceptors.request.use(request => {
 })
 
 MTG.interceptors.response.use(response => {
+  console.log(response)
   return response
 }, (error) => {
   return Promise.reject(error)

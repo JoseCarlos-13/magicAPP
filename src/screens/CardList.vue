@@ -57,6 +57,12 @@ export default {
     font-family: 'Libre Baskerville', serif;
   }
 
+  #message{
+    font-family: 'Libre Baskerville', serif;
+    color: white;
+    margin: 150px 0px 350px 0px;
+  }
+
   .card {
     color: white;
     margin: 10px;

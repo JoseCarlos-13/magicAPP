@@ -83,7 +83,7 @@ export default {
     border-radius: 20px;
     text-align: center;
     word-wrap: break-word;
-    padding: 20px 30px 20px 30px;
+    padding: 20px 20px 20px 20px;
     border: 5px outset white;
     font-size: 20px;
   }
