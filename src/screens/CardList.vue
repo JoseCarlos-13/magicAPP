@@ -24,7 +24,7 @@ export default {
   },
 
   watch: {
-    search (search) {
+    search () {
       this.loadCardsList(this.search)
     }
   },
@@ -52,20 +52,6 @@ export default {
   @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
   @import url('https://fonts.googleapis.com/css?family=Old+Standard+TT&display=swap');
 
-  h1 {
-    font-family: 'Libre Baskerville', serif;
-  }
-
-  h3{
-    font-family: 'Libre Baskerville', serif;
-  }
-
-  #message{
-    font-family: 'Libre Baskerville', serif;
-    color: white;
-    margin: 150px 0px 350px 0px;
-  }
-
   .card {
     color: white;
     margin: 10px;
@@ -73,7 +59,7 @@ export default {
 
   .list {
     margin-top: 100px;
-    margin-bottom: 150px;
+    margin-bottom: 240px;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -84,7 +70,7 @@ export default {
     border-radius: 7px;
     border: solid 3.5px;
     border-color: white;
-    width: 250px;
+    width: 270px;
     height: auto;
     overflow: hidden;
   }
