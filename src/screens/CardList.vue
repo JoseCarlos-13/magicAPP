@@ -18,8 +18,15 @@ import { mapActions, mapState } from 'vuex'
 export default {
   computed: {
     ...mapState([
-      'cardsList'
+      'cardsList',
+      'search'
     ])
+  },
+
+  watch: {
+    search (search) {
+      this.loadCardsList(this.search)
+    }
   },
 
   methods: {
@@ -35,11 +42,7 @@ export default {
     }
   },
 
-  beforeMount () {
-    this.loadCardsList(this.$route.query.cardsList)
-  },
-
-  updated () {
+  mounted () {
     this.loadCardsList(this.$route.query.cardsList)
   }
 }
@@ -69,8 +72,8 @@ export default {
   }
 
   .list {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 100px;
+    margin-bottom: 150px;
     display: flex;
     justify-content: center;
     flex-direction: row;

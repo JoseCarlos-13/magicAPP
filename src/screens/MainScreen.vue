@@ -23,7 +23,7 @@ export default {
   #main-text {
     color: white;
     text-shadow: 1px 1px 3px black;
-    margin: 80px 50px 450px 50px;
+    margin: 200px 0px 340px 0px;
   }
 
   .main-page {

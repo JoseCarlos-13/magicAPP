@@ -43,14 +43,12 @@ export default new Vuex.Store({
     loadCardsList ({ commit }, payload) {
       return Card.getCardsList(payload).then(response => {
         commit('setCardsList', response.data.data)
-        return response
       }).catch((error) => error)
     },
 
     loadCard ({ commit }, payload) {
       return Card.getCard(payload).then(response => {
         commit('setCard', response.data)
-        return response
       }).catch(error => error)
     },
 

@@ -4,7 +4,7 @@
       <el-col :xs="24" :sm="24" :md="24" :lg="24">
         <Header />
 
-        <el-main>
+        <el-main class="layout">
           <transition name="fade" mode="out-in">
             <router-view />
           </transition>
