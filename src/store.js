@@ -54,6 +54,10 @@ export default new Vuex.Store({
 
     inputSearch ({ commit }, payload) {
       commit('setSearch', payload)
+    },
+
+    cleanSearchBar ({ commit }) {
+      commit('setSearch', '')
     }
   }
 })

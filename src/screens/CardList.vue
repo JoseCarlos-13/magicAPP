@@ -25,7 +25,9 @@ export default {
 
   watch: {
     search () {
-      this.loadCardsList(this.search)
+      setTimeout(() => {
+        this.loadCardsList(this.search)
+      }, 1000);
     }
   },
 

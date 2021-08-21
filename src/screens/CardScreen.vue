@@ -3,7 +3,9 @@
     <el-row class="chosedCard" v-if="card">
       <el-col :lg="6">
         <div>
-          <el-button class="btn" @click="backToTheCardList()">Back to the list</el-button>
+          <el-button class="btn" @click="backToTheCardList()">
+            Back to the list
+          </el-button>
         </div>
         <img :src="card.image_uris.png">
       </el-col>
@@ -13,8 +15,7 @@
         <h3><b>Type: </b>{{ card.type_line }}</h3>
 
         <p v-show="card.power && card.toughness">
-          <b>Power/Toughness: </b>
-          {{ card.power }}/{{ card.toughness }}
+          <b>Power/Toughness: {{ card.power }}/{{ card.toughness }}</b>
         </p>
 
         <p v-show="card.oracle_text">
