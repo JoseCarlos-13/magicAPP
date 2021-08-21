@@ -15,14 +15,7 @@ export const MTG = axios.create({
   baseURL: 'https://api.scryfall.com/'
 })
 
-MTG.interceptors.request.use(request => {
-  return request
-}, (error) => {
-  return Promise.reject(error)
-})
-
 MTG.interceptors.response.use(response => {
-  console.log(response)
   return response
 }, (error) => {
   return Promise.reject(error)

@@ -1,9 +1,7 @@
 <template>
   <el-row>
-    <el-input placeholder="Write the card name here"
-      :value="search" @input="inputSearch">
-        <el-button slot="append" icon="el-icon-search"
-        @click="searchingCard(search)"/>
+    <el-input placeholder="For to search, press enter"
+      :value="search" @input="inputSearch" @change="searchingCard(search)">
     </el-input>
   </el-row>
 </template>
@@ -13,7 +11,8 @@ import { mapState, mapActions } from 'vuex'
 export default {
   computed: {
     ...mapState([
-      'search'
+      'search',
+      'cardsList'
     ])
   },
 
@@ -26,7 +25,7 @@ export default {
       this.inputSearch(search)
       this.$router.push({
         name: `cardlist`,
-        query: { cardsList: search }
+        params: { cardsList: search }
       })
     }
   }
@@ -37,5 +36,6 @@ export default {
   .el-input__inner{
     background-color: rgb(104, 104, 104);
     color: white;
+    width: 240px;
   }
 </style>
