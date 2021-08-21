@@ -27,7 +27,7 @@ export default {
     search () {
       setTimeout(() => {
         this.loadCardsList(this.search)
-      }, 1000);
+      }, 1500)
     }
   },
 

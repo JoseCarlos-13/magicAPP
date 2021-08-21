@@ -1,6 +1,6 @@
 <template>
   <el-row>
-    <el-input placeholder="Write the card name and press enter for to search"
+    <el-input placeholder="For to search, press enter"
       :value="search" @input="inputSearch" @change="searchingCard(search)">
     </el-input>
   </el-row>
@@ -36,6 +36,6 @@ export default {
   .el-input__inner{
     background-color: rgb(104, 104, 104);
     color: white;
-    width: 340px;
+    width: 240px;
   }
 </style>

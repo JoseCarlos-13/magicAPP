@@ -13,18 +13,18 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
-  export default {
-    methods: {
-      ...mapActions([
-        'cleanSearchBar'
-      ])
-    },
+import { mapActions } from 'vuex'
+export default {
+  methods: {
+    ...mapActions([
+      'cleanSearchBar'
+    ])
+  },
 
-    mounted () {
-      this.cleanSearchBar()
-    }
+  mounted () {
+    this.cleanSearchBar()
   }
+}
 </script>
 
 <style>
