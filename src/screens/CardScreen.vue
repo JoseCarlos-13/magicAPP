@@ -1,18 +1,21 @@
 <template>
   <div>
     <el-row class="chosedCard" v-if="card">
-      <div>
+      <el-col :lg="6">
+        <div>
+          <el-button class="btn" @click="backToTheCardList()">
+            Back to the list
+          </el-button>
+        </div>
         <img :src="card.image_uris.png">
-      </div>
+      </el-col>
 
-      <el-col :xs="24" :sm="24" :md="24" :lg="14"
-         class="card-description">
+      <el-col :xs="24" :sm="24" :md="24" :lg="12" class="card-description">
         <h2><b>Name: </b>{{ card.name }}</h2>
         <h3><b>Type: </b>{{ card.type_line }}</h3>
 
         <p v-show="card.power && card.toughness">
-          <b>Power/Toughness: </b>
-          {{ card.power }}/{{ card.toughness }}
+          <b>Power/Toughness: {{ card.power }}/{{ card.toughness }}</b>
         </p>
 
         <p v-show="card.oracle_text">
@@ -32,17 +35,25 @@ import { mapActions, mapState } from 'vuex'
 export default {
   computed: {
     ...mapState([
-      'card'
+      'card',
+      'search'
     ])
   },
 
   methods: {
     ...mapActions([
       'loadCard'
-    ])
+    ]),
+
+    backToTheCardList () {
+      this.$router.push({
+        name: `cardlist`,
+        query: { cardsList: this.search }
+      })
+    }
   },
 
-  beforeMount () {
+  mounted () {
     this.loadCard(this.$route.query.chosedcard.name)
   }
 }
@@ -56,24 +67,36 @@ export default {
     font-family: 'Libre Baskerville', serif;
   }
 
-  h3 {
+  .btn {
     font-family: 'Libre Baskerville', serif;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-radius: 15px;
+    background-color: rgb(223, 119, 34);
+  }
+
+  .btn:hover {
+    background-color: rgb(223, 119, 34);
+    color: white;
   }
 
   .chosedCard {
-    margin: 50px 0px 50px 0px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    margin-bottom: 220px;
   }
 
   .chosedCard img {
     border: 3px solid white;
     overflow: hidden;
     border-radius: 10px;
-    width: 300px;
-    margin: 0px 0px 20px 0px;
+    width: 270px;
+    margin: 50px 0px 0px 0px;
   }
 
    .card-description {
@@ -83,8 +106,9 @@ export default {
     border-radius: 20px;
     text-align: center;
     word-wrap: break-word;
+    margin: 60px 0px 20px 0px;
     padding: 20px 20px 20px 20px;
     border: 5px outset white;
-    font-size: 20px;
+    font-size: 22px;
   }
 </style>
