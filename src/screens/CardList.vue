@@ -59,7 +59,7 @@ export default {
 
   .list {
     margin-top: 100px;
-    margin-bottom: 240px;
+    margin-bottom: 212px;
     display: flex;
     justify-content: center;
     flex-direction: row;

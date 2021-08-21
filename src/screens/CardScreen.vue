@@ -87,14 +87,14 @@ export default {
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    margin-bottom: 90px;
+    margin-bottom: 220px;
   }
 
   .chosedCard img {
     border: 3px solid white;
     overflow: hidden;
     border-radius: 10px;
-    width: 363px;
+    width: 270px;
     margin: 50px 0px 0px 0px;
   }
 
@@ -105,9 +105,9 @@ export default {
     border-radius: 20px;
     text-align: center;
     word-wrap: break-word;
-    margin: 30px 0px 30px 0px;
+    margin: 60px 0px 20px 0px;
     padding: 20px 20px 20px 20px;
     border: 5px outset white;
-    font-size: 20px;
+    font-size: 22px;
   }
 </style>
