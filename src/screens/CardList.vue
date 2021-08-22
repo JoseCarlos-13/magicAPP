@@ -45,7 +45,7 @@ export default {
   },
 
   mounted () {
-    this.loadCardsList(this.$route.query.cardsList)
+    this.loadCardsList(this.$route.params.cardsList)
   }
 }
 </script>
