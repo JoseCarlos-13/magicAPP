@@ -25,7 +25,7 @@ export default {
       this.inputSearch(search)
       this.$router.push({
         name: `cardlist`,
-        query: { cardsList: search }
+        params: { cardsList: search }
       })
     }
   }

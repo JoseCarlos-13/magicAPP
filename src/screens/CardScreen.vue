@@ -3,10 +3,11 @@
     <el-row class="chosedCard" v-if="card">
       <el-col :lg="6">
         <div>
-          <el-button class="btn" @click="backToTheCardList()">
+          <el-button class="goBack" @click="backToTheCardList()">
             Back to the list
           </el-button>
         </div>
+
         <img :src="card.image_uris.png">
       </el-col>
 
@@ -48,7 +49,7 @@ export default {
     backToTheCardList () {
       this.$router.push({
         name: `cardlist`,
-        query: { cardsList: this.search }
+        params: { cardsList: this.search }
       })
     }
   },
@@ -67,7 +68,7 @@ export default {
     font-family: 'Libre Baskerville', serif;
   }
 
-  .btn {
+  .goBack {
     font-family: 'Libre Baskerville', serif;
     color: white;
     margin-top: 10px;
@@ -78,7 +79,7 @@ export default {
     background-color: rgb(223, 119, 34);
   }
 
-  .btn:hover {
+  .goBack:hover {
     background-color: rgb(223, 119, 34);
     color: white;
   }
