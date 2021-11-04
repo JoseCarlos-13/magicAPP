@@ -38,8 +38,8 @@ export default {
 
     chosedCard (card) {
       this.$router.push({
-        path: 'chosedcard/:card',
-        query: { chosedcard: card }
+        name: 'card',
+        params: { id: card.id }
       })
     }
   },

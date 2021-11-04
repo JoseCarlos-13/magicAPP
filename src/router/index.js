@@ -28,9 +28,9 @@ export default new Router({
         },
 
         {
-          path: 'chosedcard/:card',
+          path: '/:id',
           component: CardScreen,
-          name: 'chosedcard'
+          name: 'card'
         }
       ]
     }
