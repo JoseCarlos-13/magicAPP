@@ -22,13 +22,13 @@ export default new Router({
         },
 
         {
-          path: 'thecardlist/:cardlist',
+          path: 'cards',
           component: CardList,
-          name: 'cardlist'
+          name: 'cards'
         },
 
         {
-          path: '/:id',
+          path: 'cards/:id',
           component: CardScreen,
           name: 'card'
         }

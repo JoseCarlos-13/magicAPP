@@ -1,7 +1,7 @@
 <template>
   <el-row>
     <el-input placeholder="For to search, press enter"
-      :value="search" @input="inputSearch" @change="searchingCard(search)">
+      :value="search" @input="inputSearch" @change="searchingCard">
     </el-input>
   </el-row>
 </template>
@@ -21,13 +21,15 @@ export default {
       'inputSearch'
     ]),
 
-    searchingCard (search) {
-      this.inputSearch(search)
+    searchingCard () {
       this.$router.push({
-        name: `cardlist`,
-        params: { cardsList: search }
+        name: 'cards'
       })
     }
+  },
+
+  mounted () {
+    this.inputSearch(this.search)
   }
 }
 </script>

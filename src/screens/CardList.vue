@@ -25,9 +25,11 @@ export default {
 
   watch: {
     search () {
-      setTimeout(() => {
-        this.loadCardsList(this.search)
-      }, 1500)
+      if (this.search) {
+        setTimeout(() => {
+          this.loadCardsList(this.search)
+        }, 1800)
+      }
     }
   },
 
@@ -45,7 +47,7 @@ export default {
   },
 
   mounted () {
-    this.loadCardsList(this.$route.params.cardsList)
+    this.loadCardsList(this.search)
   }
 }
 </script>
