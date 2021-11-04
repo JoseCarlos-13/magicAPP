@@ -55,7 +55,7 @@ export default {
   },
 
   mounted () {
-    this.loadCard(this.$route.query.chosedcard.name)
+    this.loadCard(this.$route.params.id)
   }
 }
 </script>
