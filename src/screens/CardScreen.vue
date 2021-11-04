@@ -48,8 +48,7 @@ export default {
 
     backToTheCardList () {
       this.$router.push({
-        name: `cardlist`,
-        params: { cardsList: this.search }
+        name: 'cards'
       })
     }
   },

@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { Card } from './services'
 import { MTG } from './main'
 
 Vue.use(Vuex)
@@ -42,7 +41,7 @@ export default new Vuex.Store({
 
   actions: {
     loadCardsList ({ commit }, payload) {
-      return Card.getCardsList(payload).then(response => {
+      return MTG.get(`cards/search?q=${payload}`).then(response => {
         commit('setCardsList', response.data.data)
       }).catch((error) => error)
     },
