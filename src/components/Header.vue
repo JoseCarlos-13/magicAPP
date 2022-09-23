@@ -11,15 +11,11 @@
 <script>
 import Searchbar from '../components/Searchbar'
 
-export default {
-  components: {
-    Searchbar
-  }
-}
+export default { components: { Searchbar } }
 </script>
 
 <style>
-  .topbar{
+  .topbar {
     display: flex;
     flex-wrap: wrap;
     border-bottom: 1px solid white;
@@ -28,7 +24,5 @@ export default {
     background-image: url('../assets/noma.png');
   }
 
-  .logo{
-    margin-top: -16px;
-  }
+  .logo { margin-top: -16px; }
 </style>

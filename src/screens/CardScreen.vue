@@ -19,13 +19,8 @@
           <b>Power/Toughness: {{ card.power }}/{{ card.toughness }}</b>
         </p>
 
-        <p v-show="card.oracle_text">
-          <b>Description: </b>{{ card.oracle_text }}
-        </p>
-
-        <p v-show="card.flavor_text">
-          <i>{{ card.flavor_text }}</i>
-        </p>
+        <p v-show="card.oracle_text"> <b>Description: </b>{{ card.oracle_text }}</p>
+        <p v-show="card.flavor_text"><i>{{ card.flavor_text }}</i></p>
       </el-col>
     </el-row>
   </div>
@@ -34,28 +29,15 @@
 <script>
 import { mapActions, mapState } from 'vuex'
 export default {
-  computed: {
-    ...mapState([
-      'card',
-      'search'
-    ])
-  },
+  computed: { ...mapState([ 'card', 'search' ]) },
 
   methods: {
-    ...mapActions([
-      'loadCard'
-    ]),
+    ...mapActions([ 'loadCard' ]),
 
-    backToTheCardList () {
-      this.$router.push({
-        name: 'cards'
-      })
-    }
+    backToTheCardList () { this.$router.push({ name: 'cards' }) }
   },
 
-  mounted () {
-    this.loadCard(this.$route.params.id)
-  }
+  mounted () { this.loadCard(this.$route.params.id) }
 }
 </script>
 
@@ -63,9 +45,7 @@ export default {
   @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
   @import url('https://fonts.googleapis.com/css?family=Old+Standard+TT&display=swap');
 
-  h1 {
-    font-family: 'Libre Baskerville', serif;
-  }
+  h1 { font-family: 'Libre Baskerville', serif; }
 
   .goBack {
     font-family: 'Libre Baskerville', serif;
@@ -78,10 +58,7 @@ export default {
     background-color: rgb(223, 119, 34);
   }
 
-  .goBack:hover {
-    background-color: rgb(223, 119, 34);
-    color: white;
-  }
+  .goBack:hover { background-color: rgb(223, 119, 34); color: white; }
 
   .chosedCard {
     display: flex;
