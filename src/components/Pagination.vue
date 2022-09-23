@@ -35,4 +35,8 @@ export default {
     color: white;
     font-family: 'Libre Baskerville', serif;
   }
+
+  .el-pagination > button:disabled {
+    background-color: rgb(211, 147, 95) !important;
+  }
 </style>
