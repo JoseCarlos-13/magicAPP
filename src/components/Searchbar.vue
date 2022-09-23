@@ -8,29 +8,17 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
+
 export default {
-  computed: {
-    ...mapState([
-      'search',
-      'cardsList'
-    ])
-  },
+  computed: { ...mapState([ 'search', 'cardsList' ]) },
 
   methods: {
-    ...mapActions([
-      'inputSearch'
-    ]),
+    ...mapActions([ 'inputSearch' ]),
 
-    searchingCard () {
-      this.$router.push({
-        name: 'cards'
-      })
-    }
+    searchingCard () { this.$router.push({ name: 'cards' }).catch(err => err) }
   },
 
-  mounted () {
-    this.inputSearch(this.search)
-  }
+  mounted () { this.inputSearch(this.search) }
 }
 </script>
 

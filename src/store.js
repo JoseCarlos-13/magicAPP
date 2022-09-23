@@ -6,44 +6,29 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    cardsList: [],
+    cards: [],
     card: null,
     search: ''
   },
 
   getters: {
-    cardsList (state) {
-      return state.cardsList
-    },
-
-    card (state) {
-      return state.card
-    },
-
-    search (state) {
-      return state.search
-    }
+    cards (state) { return state.cards },
+    card (state) { return state.card },
+    search (state) { return state.search }
   },
 
   mutations: {
-    setCardsList (state, cardsList) {
-      state.cardsList = cardsList
-    },
-
-    setCard (state, card) {
-      state.card = card
-    },
-
-    setSearch (state, search) {
-      state.search = search
-    }
+    setCards (state, cards) { state.cards = cards },
+    setCard (state, card) { state.card = card },
+    setSearch (state, search) { state.search = search }
   },
 
   actions: {
     loadCardsList ({ commit }, payload) {
-      return MTG.get(`cards/search?q=${payload}`).then(response => {
-        commit('setCardsList', response.data.data)
-      }).catch((error) => error)
+      return MTG.get(`cards/search?q=${payload}&order=name&unique=cards`)
+        .then(response => {
+          commit('setCards', response.data)
+        }).catch((error) => error)
     },
 
     loadCard ({ commit }, payload) {
@@ -53,7 +38,8 @@ export default new Vuex.Store({
     },
 
     inputSearch ({ commit }, payload) {
-      commit('setSearch', payload)
+      // eslint-disable-next-line
+      commit('setSearch', payload ? payload : '')
     },
 
     cleanSearchBar ({ commit }) {
